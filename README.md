@@ -3,14 +3,15 @@ A PROJEKT FORRÁSA MEGTALÁLHATÓ A MESTER ÁGON!
 HASZNÁLATI ÚTMUTATÓ
 1. Szükséges adatbázis: MySql
 2. ADATBÁZISHOZ CSATLAKOZÁS MENETE:
-3. spring.jpa.hibernate.ddl-auto=update
-4. spring.datasource.url=jdbc:mysql://localhost:3306/Adatbázisodneve?useSSL=false
-5. spring.datasource.username=root
-6. spring.datasource.password=
-7. spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-8. spring.jpa.show-sql=true
- ------'Adatbázisneved' saját adatbázisa.
-3. Szükségesek: Java, JDK, Maven, MySql.
+3. ----------------------------------
+4. spring.jpa.hibernate.ddl-auto=update
+5. spring.datasource.url=jdbc:mysql://localhost:3306/Adatbázisodneve?useSSL=false
+6. spring.datasource.username=root
+7. spring.datasource.password=
+8. spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+9. spring.jpa.show-sql=true
+10.---------------------------------'Adatbázisneved' saját adatbázisa.
+11. Szükségesek: Java, JDK, Maven, MySql.
 
 SPECIFIKÁCIÓK:
 1. Termék tulajdonságok megjelenítése egyenesen adatbázisból
