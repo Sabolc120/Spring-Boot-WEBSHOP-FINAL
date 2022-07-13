@@ -21,6 +21,7 @@ SPECIFIKÁCIÓK:
 4. Komment szekció minden eggyes termékhez
 5. Kosár funkció, a termékeket kosárba lehet helyezni.
 6. A kosárból a termékeket ki is lehet törölni.
+7. VIDEÓ LINK MŰKÖDÉS KÖZBEN: https://youtu.be/M7IdyIDg0yo
 
 SZERZŐI MEGJEGYZÉS:
 A projekt kizárólag gyakorlás képen készült el, mint önéletrajz tartalom és jövőbeli portfolió tartalom.
