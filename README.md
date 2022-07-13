@@ -10,7 +10,7 @@ HASZNÁLATI ÚTMUTATÓ
 7. spring.datasource.password=
 8. spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 9. spring.jpa.show-sql=true
-10.---------------------------------
+10. ---------------------------------------------
 11. 'Adatbázisneved' saját adatbázisa.
 11. Szükségesek: Java, JDK, Maven, MySql.
 
