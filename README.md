@@ -2,7 +2,14 @@ A PROJEKT FORRÁSA MEGTALÁLHATÓ A MESTER ÁGON!
 
 HASZNÁLATI ÚTMUTATÓ
 1. Szükséges adatbázis: MySql
-2. Csatlakozás módja: Properties fájl, az 'Adatbázisnevet' át kell írni a saját adatbázis névre.
+2. ADATBÁZISHOZ CSATLAKOZÁS MENETE:
+  spring.jpa.hibernate.ddl-auto=update
+  spring.datasource.url=jdbc:mysql://localhost:3306/Adatbázisodneve?useSSL=false
+  spring.datasource.username=root
+  spring.datasource.password=
+  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  spring.jpa.show-sql=true
+ ------'Adatbázisneved' saját adatbázisa.
 3. Szükségesek: Java, JDK, Maven, MySql.
 
 SPECIFIKÁCIÓK:
