@@ -1,3 +1,5 @@
+A PROJEKT FORRÁSA MEGTALÁLHATÓ A MESTER ÁGON!
+
 HASZNÁLATI ÚTMUTATÓ
 1. Szükséges adatbázis: MySql
 2. Csatlakozás módja: Properties fájl, az 'Adatbázisnevet' át kell írni a saját adatbázis névre.
