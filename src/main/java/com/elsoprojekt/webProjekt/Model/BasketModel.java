@@ -15,6 +15,8 @@ public class BasketModel {
     @Column (name="price")
     private int price;
 
+    
+
     public BasketModel() {
 
     }

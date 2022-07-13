@@ -1,6 +1,7 @@
 package com.elsoprojekt.webProjekt.Model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="previewGpu")
@@ -20,6 +21,30 @@ public class Preview {
 
     @Column (name ="memory")
     private int memory;
+
+    @OneToMany
+    @JoinColumn(name = "preview_gpu_id")
+    private List<gpuCommentsModel> gpuCommentsModels;
+
+    @OneToMany
+    @JoinColumn(name="preview_gpu_basket_id")
+    private List<gpuBasket> gpuBaskets;
+
+    public List<gpuBasket> getGpuBaskets() {
+        return gpuBaskets;
+    }
+
+    public void setGpuBaskets(List<gpuBasket> gpuBaskets) {
+        this.gpuBaskets = gpuBaskets;
+    }
+
+    public List<gpuCommentsModel> getGpuCommentsModels() {
+        return gpuCommentsModels;
+    }
+
+    public void setGpuCommentsModels(List<gpuCommentsModel> gpuCommentsModels) {
+        this.gpuCommentsModels = gpuCommentsModels;
+    }
 
     public int getMemory() {
         return memory;

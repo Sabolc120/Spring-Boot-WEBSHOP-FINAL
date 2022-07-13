@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2856e336ad.js" crossorigin="anonymous"></script>
     <link th:href="@{/styles/style.css}" rel="stylesheet" />
     <meta charset="UTF-8">
-    <title>Főoldal</title>
+    <title>Videókártyák</title>
 </head>
 <body>
 <section id="firstImpression">
@@ -50,22 +51,62 @@
         </nav>
     </div>
 </section>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Üdvözöllek a főoldalon, ez itt egy hobbi projekt</h1>
-            <p>A projekt a következő technológiákat használja: </p>
-            <ul>
-                <li>Spring, Java</li>
-                <li>Jpa alapismeretek, Hibernate</li>
-                <li>Lokális adatbázis MySql</li>
-                <li>Frontendként Bootstrap, html, css, Thymleaf</li>
-            </ul>
+<h1 class="center">Termék információk </h1>
+<hr class="hrDesign">
+<form action="/basket" method="post">
+    <div class="container-fluid productPrev">
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="productImage" th:src="${previewGpu.url}">
+            </div>
+            <div class="col-lg-6">
+                <ul>
+                    <li class="productDetail">Termék neve</li>
+                    <li class="productProp" th:text="${previewGpu.Title}"></li>
+                    <li class="productDetail">Videómemória (Gb)</li>
+                    <li class="productProp" th:text="${previewGpu.memory}"></li>
+                    <li class="productDetail">Rövid leírás</li>
+                    <li class="productDesc">Szeretne játszani is a gépén? Akkor vigyen egy videókártyát is!
+                        Ezt a technológiát arra tervezték, hogy ön szakadásmentesen tudjon esportoló lenni!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                Ár: <h1 class="noline" th:text="${previewGpu.price}"></h1>Ft
+            </div>
+            <div class="col-lg-6 basketBtn">
+                <button type="submit" class="btn btn-success btn-lg"><i class="fa-solid fa-basket-shopping"></i>Kosárba</button>
+                <input type="hidden" th:value="${previewGpu.id}" id="preview_gpu_basket_id" name="preview_gpu_basket_id">
+                <input type="hidden" th:value="${previewGpu.price}" id="product_price" name="product_price">
+                <input type="hidden" th:value="${previewGpu.Title}" id="product_name" name="product_name">
+                <input type="hidden" th:value="${previewGpu.url}" id="product_url" name="product_url">
+            </div>
         </div>
     </div>
-</div>
-<footer>
-    <h1 class="foot">A weboldalon használt képek nincsenek a tulajdonomban, és a termék adatok kizárólag kitaláció.</h1>
-</footer>
+</form>
+<section id="commentSection">
+    <h1>Kommentek</h1>
+    <form action="/gpuPreview" method="post">
+        <div class="form-group">
+            <label for="username">Megjelenő név</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Anonymus">
+        </div>
+        <div class="form-group">
+            <label for="comment">Írd ide a véleményed</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+        </div>
+        <div class="form-row text-center">
+            <div class="col">
+                <button type="submit" class="btn btn-success">Küldés</button>
+            </div>
+        </div>
+        <input type="hidden" name="preview_gpu_id" id="preview_gpu_id" th:value="${previewGpu.id}">
+    </form>
+    <ul th:each="gpuComm, stats : ${gpuComments}">
+        <h2 th:text="${gpuComm.username}"></h2>
+        <li th:text="${gpuComm.comment}"></li>
+    </ul>
+</section>
 </body>
 </html>

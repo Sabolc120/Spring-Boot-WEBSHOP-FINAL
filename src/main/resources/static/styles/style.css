@@ -1,41 +1,44 @@
-.topnav {
-  overflow: hidden;
-  background-color: #EC480F;
+/*Navbar*/
+.container-fluid{
+    padding-right:11%;
 }
+#firstImpression{
+    background-color: #630606;
+}
+.my-brand-style{
+    font-family: 'Lato', sans-serif;
+    font-size:2rem;
+    font-style:italic;
+}
+.my-item{
+    padding-left:2%;
+    font-size:1rem;
+}
+.nav-link{
+    font-size:1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-left:20px;
+    margin-right:20px;
+    color:#630606;
+}
+.container-fluid a:hover{
+    text-decoration:underline;
+    text-decoration-color:#E83A14;
+    text-decoration-thickness: 4px;
+}
+.container p{
+    font-family:'Lato', sans-serif;
+    margin-left:20px;
+    font-weight:bold;
+}
+body{
+   overflow-y: scroll;
+   overflow-x: hidden;
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 20px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #AD4833;
-  color: black;
-}
-.topnav a.active {
-  background-color: #EC0F0F;
-  color: white;
-}
-h1{
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 18px;
-    text-align: center;
-}
-p{
-    font-style: oblique;
-    text-align: center;
 }
 .boxing{
-    border: 1px solid black;
+    border: 1px solid grey;
     padding:10px;
-}
-h4{
-    text-align:center;
-    font-family: "Lucida Console", "Courier New", monospace;
 }
 .ertek{
     font-weight: 900;
@@ -43,39 +46,30 @@ h4{
     width:200px;
 }
 .col-lg-12{
-    background-color:#EC480F;
-    text-size: 30px;
+    background-color:#890F0D;
+    text-size: 1.4rem;
+    font-family:'Lato', sans-serif;
+    text-align:center;
+    color:white;
 }
 .row{
     padding-top:15px;
-}
-.button {
-  background-color: green; /* Green */
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  padding:15px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  margin-left:100px;
 }
 .paddingleft{
     margin-left:25px;
     margin-right:25px;
 }
 .foot{
-    background-color:#EC480F;
+    font-family:'Lato', sans-serif;
     text-align:center;
+    padding-top:3%;
+    font-size:1rem;
 }
 .registerForm{
     margin-left:100px;
     text-size:24px;
     margin-top:50px;
-}
+}*/
 .loginForm{
     margin-left:100px;
     text-size:24px;
@@ -99,14 +93,150 @@ input[type=password], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-input[type=submit] {
-  width: 100%;
-  background-color: orange;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+/*Previewpage*/
+.productDetail{
+    background-color:#E83A14;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    line-height:1.5;
+    font-size:1rem;
+    text-align:left;
+    padding:1%;
+}
+.productProp{
+    color: #630606;
+    font-family: 'Montserrat', sans-serif;
+    line-height:1.5;
+    font-size:1rem;
+    font-weight:bold;
+    text-align:left;
+    padding:1%;
+}
+.noline{
+    display:inline;
+    font-family: 'Montserrat', sans-serif;
+}
+.center{
+    text-align:center;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-center{
+    text-align:center;
+}
+.productImage{
+    width:80%;
+    float:left;
+    padding-right:2%;
+}
+.basketBtn{
+    padding-left:3%;
+}
+.hrDesign{
+  border-style:dotted none none;
+  border-color:#E83A14;
+  border-width:5px;
+  width:10%;
+  padding-bottom:2%;
+}
+.productDesc{
+    font-size:1rem;
+    line-height:1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    padding-top:3%;
+    text-decoration:none;
+}
+#commentSection{
+    text-align:left;
+    font-family: 'Montserrat', sans-serif;
+    padding-left:4%;
+    padding-right:4%;
+    padding-top:3%;
+    font-weight:bold;
+    color: #E83A14;
+}
+#commentSection h1{
+    font-size:2rem;
+}
+#commentSection ul{
+    padding-top:8%;
+    border:1px solid black;
+    border-radius:1%;
+    list-style:none
+    font-size:1rem;
+    padding:2%;
+    line-height:1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+}
+#commentSection li{
+    list-style:none;
+    font-family: 'Lato', sans-serif;
+    font-size:1.5rem;
+    font-width:bold;
+}
+#commentSection h2{
+    padding-bottom:2%;
+    text-align:left;
+    font-size:2rem;
+    font-weight:bold
+}
+#commentSection .btn{
+    margin-bottom:5%;
+}
+#basket{
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    font-height:1.5
+    font-size:2rem;
+    padding-top:5%;
+    padding-left:8%;
+    padding-right:8%;
+}
+#basket h1{
+    text-align:center;
+    font-family: 'Lato', sans-serif;
+    font-size:2rem;
+    padding-top:1%;
+    padding-bottom:2%;
+    font-width:bold;
+    color: #630606
+}
+#basket .focim{
+    padding-bottom:4%;
+    font-family: 'Montserrat', sans-serif;
+    font-size:3rem;
+}
+#basket li, ul{
+    list-style:none;
+}
+#basket li{
+    padding:1%;
+}
+#basket ul{
+    padding:3%;
+    border:2px solid black;
+}
+#basket ul:hover{
+    padding:3%;
+    border:2px solid #E83A14;
+    background-color:#F5EDDC;
+}
+#basket h2{
+    padding-top:1%;
+    font-size:1.5rem;
+}
+.basketProduct{
+    width:20%;
+}
+#basket a{
+    font-decoration:none;
+    font-size:2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-width:bold;
+}
+#basket a:hover{
+    text-decoration:none;
 }

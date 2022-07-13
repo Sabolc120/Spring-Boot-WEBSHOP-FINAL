@@ -16,9 +16,9 @@ public class Controller {
     public String homePageSecond(){
         return"index";
     }
-    @RequestMapping("/topOffers")
+    @RequestMapping("/computers")
     public String topOffers(){
-        return"topOffers";
+        return"computers";
     }
     @RequestMapping("/processors")
     public String processor(){

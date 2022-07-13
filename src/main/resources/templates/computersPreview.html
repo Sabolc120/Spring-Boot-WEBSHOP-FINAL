@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2856e336ad.js" crossorigin="anonymous"></script>
     <link th:href="@{/styles/style.css}" rel="stylesheet" />
     <meta charset="UTF-8">
-    <title>Főoldal</title>
+    <title>Számítógépek</title>
 </head>
 <body>
 <section id="firstImpression">
@@ -50,22 +51,64 @@
         </nav>
     </div>
 </section>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Üdvözöllek a főoldalon, ez itt egy hobbi projekt</h1>
-            <p>A projekt a következő technológiákat használja: </p>
-            <ul>
-                <li>Spring, Java</li>
-                <li>Jpa alapismeretek, Hibernate</li>
-                <li>Lokális adatbázis MySql</li>
-                <li>Frontendként Bootstrap, html, css, Thymleaf</li>
-            </ul>
+<h1 class="center">Termék információk </h1>
+<form action="/basket" method="post">
+    <div class="container-fluid productPrev">
+        <div class="row">
+            <div class="col-lg-6">
+                <img class ="productImage" th:src="${computersPreview.url}">
+            </div>
+            <div class="col-lg-6">
+                <ul>
+                    <li class="productDetail">Processzor: </li>
+                    <li class="productProp" th:text="${computersPreview.processzor}"></li>
+                    <li class="productDetail">Videókártya:</li>
+                    <li class="productProp" th:text="${computersPreview.gpu}"></li>
+                    <li class="productDetail">Memória</li>
+                    <li class="productProp" th:text="${computersPreview.memory}"></li>
+                    <li class="productDetail">Rövid leírás</li>
+                    <li class="productDesc">Ha egyszerűen csak szeretne egy teljes gépet venni anélkül hogy az
+                        alkatrészeink között válogatna, arra is adunk lehetőséget!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                Ár: <h1 class="noline" th:text="${computersPreview.price}"></h1>Ft
+            </div>
+            <div class="col-lg-6 basketBtn">
+                <button type="submit" class="btn btn-success btn-lg"><i class="fa-solid fa-basket-shopping"></i>Kosárba</button>
+                <input type="hidden" th:value="${computersPreview.id}" id="preview_pc_basket_id" name="preview_pc_basket_id">
+                <input type="hidden" th:value="${computersPreview.price}" id="product_price" name="product_price">
+                <input type="hidden" th:value="${computersPreview.Title}" id="product_name" name="product_name">
+                <input type="hidden" th:value="${computersPreview.url}" id="product_url" name="product_url">
+            </div>
         </div>
     </div>
-</div>
-<footer>
-    <h1 class="foot">A weboldalon használt képek nincsenek a tulajdonomban, és a termék adatok kizárólag kitaláció.</h1>
-</footer>
+</form>
+<section id="commentSection">
+    <h1>Kommentek</h1>
+    <form class="/computersPreview" method="post">
+        <div class="form-group">
+            <label for="username">Megjelenő név</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Anonymus">
+        </div>
+        <div class="form-group">
+            <label for="comment">Írd ide a véleményed</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+        </div>
+        <div class="form-row text-center">
+            <div class="col">
+                <button type="submit" class="btn btn-success">Küldés</button>
+            </div>
+            <input type="hidden" name="preview_top_offers_id" id="preview_top_offers_id" th:value="${computersPreview.id}">
+        </div>
+        <ul th:each="computerComm, stats : ${computerComments}">
+            <h2 th:text="${computerComm.username}"></h2>
+            <li th:text="${computerComm.comment}"></li>
+        </ul>
+    </form>
+</section>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.elsoprojekt.webProjekt.Model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="previewCpu")
@@ -26,6 +27,34 @@ public class PreviewCpu {
 
     @Column(name = "socket")
     private String socket;
+
+    @OneToMany
+    @JoinColumn(name = "preview_cpu_id")
+    private List<cpuCommentsModel> cpuCommentsModels;
+
+    @OneToMany
+    @JoinColumn(name="preview_cpu_basket_id")
+    private List<cpuBasket> cpuBaskets;
+
+    public List<cpuBasket> getCpuBaskets() {
+        return cpuBaskets;
+    }
+
+    public void setCpuBaskets(List<cpuBasket> cpuBaskets) {
+        this.cpuBaskets = cpuBaskets;
+    }
+
+    public PreviewCpu(Long preview_cpu_id) {
+
+    }
+
+    public List<cpuCommentsModel> getCpuCommentsModels() {
+        return cpuCommentsModels;
+    }
+
+    public void setCpuCommentsModels(List<cpuCommentsModel> cpuCommentsModels) {
+        this.cpuCommentsModels = cpuCommentsModels;
+    }
 
     public PreviewCpu() {
 
@@ -54,17 +83,16 @@ public class PreviewCpu {
     public void setSocket(String socket) {
         this.socket = socket;
     }
-
-    public Long getId() {
-        return id;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
 
     public String getTitle() {
         return Title;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setTitle(String title) {

@@ -1,10 +1,11 @@
 package com.elsoprojekt.webProjekt.Model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Optional;
 
 @Entity
-@Table(name="previewTopOffers")
+@Table(name="previewComputers")
 public class PreviewTopOffers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +29,29 @@ public class PreviewTopOffers {
     @Column(name = "gpu")
     private String gpu;
 
+    @OneToMany
+    @JoinColumn(name="preview_top_offers_id")
+    private List<computersCommentsModel> computersCommentsModel;
 
+    @OneToMany
+    @JoinColumn(name="preview_pc_basket_id")
+    private List<computerBasket> pcBaskets;
+
+    public List<computerBasket> getPcBaskets() {
+        return pcBaskets;
+    }
+
+    public void setPcBaskets(List<computerBasket> pcBaskets) {
+        this.pcBaskets = pcBaskets;
+    }
+
+    public List<com.elsoprojekt.webProjekt.Model.computersCommentsModel> getComputersCommentsModel() {
+        return computersCommentsModel;
+    }
+
+    public void setComputersCommentsModel(List<com.elsoprojekt.webProjekt.Model.computersCommentsModel> computersCommentsModel) {
+        this.computersCommentsModel = computersCommentsModel;
+    }
 
     public String getGpu() {
         return gpu;

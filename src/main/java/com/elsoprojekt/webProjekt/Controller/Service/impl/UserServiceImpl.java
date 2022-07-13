@@ -6,8 +6,8 @@ import com.elsoprojekt.webProjekt.dao.UserDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @AllArgsConstructor
+@Service
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
     @Override
